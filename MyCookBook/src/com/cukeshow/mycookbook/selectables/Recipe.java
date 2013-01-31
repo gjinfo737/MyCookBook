@@ -6,20 +6,21 @@ import android.view.View.OnClickListener;
 
 public class Recipe extends Selectable {
 
-	private List<Selectable> thingsToDo;
+	private List<ThingsToDo> ThingsToDo;
 
 	public Recipe(String Title, String SubTitle, int Drawable,
-			OnClickListener clickListener, List<Selectable> thingsToDo) {
+			OnClickListener clickListener,
+			List<com.cukeshow.mycookbook.selectables.ThingsToDo> list) {
 		super(Title, SubTitle, Drawable, clickListener);
-		this.setThingsToDo(thingsToDo);
+		this.setThingsToDo(list);
 	}
 
-	public List<Selectable> getThingsToDo() {
-		return thingsToDo;
+	public List<ThingsToDo> getThingsToDo() {
+		return ThingsToDo;
 	}
 
-	public void setThingsToDo(List<Selectable> thingsToDo) {
-		this.thingsToDo = thingsToDo;
+	public void setThingsToDo(List<ThingsToDo> thingsToDo) {
+		this.ThingsToDo = thingsToDo;
 	}
 
 }

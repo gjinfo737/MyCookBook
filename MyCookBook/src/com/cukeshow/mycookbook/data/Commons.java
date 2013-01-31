@@ -10,7 +10,7 @@ import com.cukeshow.mycookbook.selectables.CookingAndServingSteps;
 import com.cukeshow.mycookbook.selectables.Ingregients;
 import com.cukeshow.mycookbook.selectables.PreparationSteps;
 import com.cukeshow.mycookbook.selectables.Recipe;
-import com.cukeshow.mycookbook.selectables.Selectable;
+import com.cukeshow.mycookbook.selectables.ThingsToDo;
 
 public class Commons {
 	public static final int BOD_RADIUS_DEFAULT = layout.bod_radius_default;
@@ -28,25 +28,59 @@ public class Commons {
 			id.bod_radius_item_0, id.bod_radius_item_1, id.bod_radius_item_2,
 			id.bod_radius_item_3, id.bod_radius_item_4, id.bod_radius_item_5,
 			id.bod_radius_item_6, id.bod_radius_item_7, id.bod_radius_item_8, };
-	public static final List<List<Selectable>> thingsToDo = new ArrayList<List<Selectable>>() {
+	public static final List<List<Ingregients>> ingredients = new ArrayList<List<Ingregients>>() {
 		{
-			add(new ArrayList<Selectable>() {
+			add(new ArrayList<Ingregients>() {
 				{
-					add(new Ingregients(drawable.ic_launcher, null));
+					add(new Ingregients("0", "", drawable.ic_launcher, null));
+					add(new Ingregients("1", "", drawable.ic_launcher, null));
+					add(new Ingregients("2", "", drawable.ic_launcher, null));
+					add(new Ingregients("3", "", drawable.ic_launcher, null));
+					add(new Ingregients("4", "", drawable.ic_launcher, null));
+				}
+			});
+			add(new ArrayList<Ingregients>() {
+				{
+					add(new Ingregients("0", "", drawable.ic_launcher, null));
+					add(new Ingregients("1", "", drawable.ic_launcher, null));
+					add(new Ingregients("2", "", drawable.ic_launcher, null));
+					add(new Ingregients("3", "", drawable.ic_launcher, null));
+					add(new Ingregients("4", "", drawable.ic_launcher, null));
+					add(new Ingregients("5", "", drawable.ic_launcher, null));
+				}
+			});
+			add(new ArrayList<Ingregients>() {
+				{
+					add(new Ingregients("0", "", drawable.ic_launcher, null));
+					add(new Ingregients("1", "", drawable.ic_launcher, null));
+					add(new Ingregients("2", "", drawable.ic_launcher, null));
+				}
+			});
+
+		}
+	};
+	public static final List<List<ThingsToDo>> thingsToDo = new ArrayList<List<ThingsToDo>>() {
+		{
+			add(new ArrayList<ThingsToDo>() {
+				{
+					add(new Ingregients(drawable.ic_launcher, null,
+							ingredients.get(0)));
 					add(new PreparationSteps(drawable.ic_launcher, null));
 					add(new CookingAndServingSteps(drawable.ic_launcher, null));
 				}
 			});
-			add(new ArrayList<Selectable>() {
+			add(new ArrayList<ThingsToDo>() {
 				{
-					add(new Ingregients(drawable.ic_launcher, null));
+					add(new Ingregients(drawable.ic_launcher, null,
+							ingredients.get(1)));
 					add(new PreparationSteps(drawable.ic_launcher, null));
 					add(new CookingAndServingSteps(drawable.ic_launcher, null));
 				}
 			});
-			add(new ArrayList<Selectable>() {
+			add(new ArrayList<ThingsToDo>() {
 				{
-					add(new Ingregients(drawable.ic_launcher, null));
+					add(new Ingregients(drawable.ic_launcher, null,
+							ingredients.get(2)));
 					add(new PreparationSteps(drawable.ic_launcher, null));
 					add(new CookingAndServingSteps(drawable.ic_launcher, null));
 				}

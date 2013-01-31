@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name="RecipeMainScreenActivity"></activity>
+        <activity android:name="IngredientsActivity"></activity>
     </application>
 
 </manifest>

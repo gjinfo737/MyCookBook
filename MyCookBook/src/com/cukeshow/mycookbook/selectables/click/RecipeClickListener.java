@@ -9,8 +9,8 @@ import android.view.View.OnClickListener;
 import com.cukeshow.mycookbook.RecipeMainScreenActivity;
 
 public class RecipeClickListener implements OnClickListener {
-	int ID = -1;
-	Activity activity;
+	private int ID = -1;
+	private Activity activity;
 
 	public RecipeClickListener(Activity activity, int id) {
 		this.ID = id;
@@ -19,7 +19,7 @@ public class RecipeClickListener implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		Log.e("recipe click", ID + "");
+		Log.e("recipe click", ID + " ");
 		Intent intentRecMainScreen = new Intent(activity,
 				RecipeMainScreenActivity.class);
 		RecipeMainScreenActivity.setCurrentRecipeIndex(ID);

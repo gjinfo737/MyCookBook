@@ -11,6 +11,7 @@ import com.cukeshow.mycookbook.R.layout;
 import com.cukeshow.mycookbook.data.Commons;
 import com.cukeshow.mycookbook.selectables.Selectable;
 import com.cukeshow.mycookbook.selectables.click.QuitSelectable;
+import com.cukeshow.mycookbook.selectables.click.ThingsToDoClickListener;
 
 public class RecipeMainScreenActivity extends BaseActivity {
 
@@ -25,6 +26,15 @@ public class RecipeMainScreenActivity extends BaseActivity {
 
 	@Override
 	protected void loadList() {
+		for (int i = 0; i < Commons.recipes.get(recipeIndex).getThingsToDo()
+				.size(); i++) {
+			Commons.recipes
+					.get(recipeIndex)
+					.getThingsToDo()
+					.get(i)
+					.setMOnClickListener(
+							new ThingsToDoClickListener(this, recipeIndex, i));
+		}
 	}
 
 	@Override
@@ -46,6 +56,10 @@ public class RecipeMainScreenActivity extends BaseActivity {
 
 	public static void setCurrentRecipeIndex(int ID) {
 		RecipeMainScreenActivity.recipeIndex = ID;
+	}
+
+	public static int getCurrentRecipeIndex() {
+		return RecipeMainScreenActivity.recipeIndex;
 	}
 
 }
