@@ -1,5 +1,6 @@
 package com.cukeshow.mycookbook;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import northwoods.discovery.bodaciousdataslate.BodaciousAdapter;
@@ -10,11 +11,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
+import com.cukeshow.mycookbook.R.drawable;
 import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
-import com.cukeshow.mycookbook.fakedata.Recipes;
 import com.cukeshow.mycookbook.selectables.QuitSelectable;
 import com.cukeshow.mycookbook.selectables.QuitSelectable.IQuitter;
+import com.cukeshow.mycookbook.selectables.RecipeClickListener;
 import com.cukeshow.mycookbook.selectables.Selectable;
 
 /**
@@ -41,6 +43,7 @@ public class SelectRecipeActivity extends Activity implements IQuitter {
 			id.bod_radius_item_6, id.bod_radius_item_7, id.bod_radius_item_8, };
 	private BodaciousRadiusMaximus<Selectable> radial;
 	private RadiusItemusPopulus_IconTitleSubTitle radiusItemPopulater;
+	public List<Selectable> recipes;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +59,25 @@ public class SelectRecipeActivity extends Activity implements IQuitter {
 				(ViewGroup) findViewById(RADIUS_SUB_LAYOUT_ID),
 				RADIUS_ITEM_CONTAINER_ID, RADIUS_ITEM_BODACIOUS,
 				radiusItemPopulater, BODACIOUS_LISTVIEW_ID);
+		loadRecipes();
 
-		int numberOfItems = 2;
-		setUpList(numberOfItems);
+		setUpList();
 	}
 
-	public void setUpList(int numberOfItems) {
+	public void loadRecipes() {
+		recipes = new ArrayList<Selectable>();
+		recipes.add(new Selectable("Cucumber and Onions", "Healthy Snacks",
+				drawable.ic_launcher, new RecipeClickListener(this, 0)));
+		recipes.add(new Selectable("Beef Stew", "Hearty Meals",
+				drawable.ic_launcher, new RecipeClickListener(this, 1)));
+		recipes.add(new Selectable("Fruit Parfait", "Healthy Desserts",
+				drawable.ic_launcher, new RecipeClickListener(this, 2)));
+	}
+
+	public void setUpList() {
 		BodaciousAdapter<Selectable> bodaciousStringAdapter = new SelectableBodAdapter(
 				radiusItemPopulater, getLayoutInflater());
-		List<Selectable> recipes = Recipes.RECIPES;
+
 		recipes.add(new QuitSelectable(this));
 		bodaciousStringAdapter.setList(recipes, recipes.size() - 1);
 
@@ -75,4 +88,5 @@ public class SelectRecipeActivity extends Activity implements IQuitter {
 	public void quit() {
 		finish();
 	}
+
 }
