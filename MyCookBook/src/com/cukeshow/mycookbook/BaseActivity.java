@@ -13,7 +13,7 @@ import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
 import com.cukeshow.mycookbook.data.Commons;
 import com.cukeshow.mycookbook.selectables.Selectable;
-import com.cukeshow.mycookbook.selectables.click.QuitSelectable.IQuitter;
+import com.cukeshow.mycookbook.selectables.click.IQuitter;
 
 public class BaseActivity extends Activity implements IQuitter {
 	protected BodaciousRadiusMaximus<Selectable> radial;
@@ -22,12 +22,6 @@ public class BaseActivity extends Activity implements IQuitter {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	}
-
-	protected void resume() {
-		clearAll();
-		loadList();
-		setUpList();
 	}
 
 	protected void create() {
@@ -41,7 +35,8 @@ public class BaseActivity extends Activity implements IQuitter {
 				Commons.RADIUS_ITEM_CONTAINER_ID,
 				Commons.RADIUS_ITEM_BODACIOUS, radiusItemusPopulus,
 				Commons.BODACIOUS_LISTVIEW_ID);
-		resume();
+		loadList();
+		setUpList();
 	}
 
 	protected void clearAll() {

@@ -1,5 +1,6 @@
 package com.cukeshow.mycookbook;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import northwoods.discovery.bodaciousdataslate.BodaciousAdapter;
@@ -10,12 +11,10 @@ import com.cukeshow.mycookbook.R.layout;
 import com.cukeshow.mycookbook.data.Commons;
 import com.cukeshow.mycookbook.selectables.Selectable;
 import com.cukeshow.mycookbook.selectables.click.QuitSelectable;
-import com.cukeshow.mycookbook.selectables.click.QuitSelectable.IQuitter;
 
-public class RecipeMainScreenActivity extends BaseActivity implements IQuitter {
+public class RecipeMainScreenActivity extends BaseActivity {
 
 	private static int recipeIndex = -1;
-	public List<Selectable> thingsToDo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,23 +24,22 @@ public class RecipeMainScreenActivity extends BaseActivity implements IQuitter {
 	}
 
 	@Override
-	protected void onResume() {
-		super.onResume();
-		resume();
-	}
-
-	@Override
 	protected void loadList() {
-		this.thingsToDo = Commons.recipes.get(recipeIndex).getThingsToDo();
 	}
 
 	@Override
 	protected void setUpList() {
 		BodaciousAdapter<Selectable> bodaciousStringAdapter = new SelectableBodAdapter(
 				radiusItemusPopulus, getLayoutInflater());
+		List<Selectable> selectables = new ArrayList<Selectable>();
+		int count = Commons.recipes.get(recipeIndex).getThingsToDo().size();
+		for (int i = 0; i < count; i++) {
+			selectables.add(Commons.recipes.get(recipeIndex).getThingsToDo()
+					.get(i));
+		}
+		selectables.add(new QuitSelectable(this, "Back"));
 
-		thingsToDo.add(new QuitSelectable(this, "Back"));
-		bodaciousStringAdapter.setList(thingsToDo, thingsToDo.size() - 1);
+		bodaciousStringAdapter.setList(selectables, selectables.size() - 1);
 
 		radial.setAdapter(bodaciousStringAdapter);
 	}

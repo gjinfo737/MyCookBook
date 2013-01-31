@@ -15,6 +15,8 @@ import com.cukeshow.mycookbook.selectables.click.RecipeClickListener;
 
 public class SelectRecipeActivity extends BaseActivity {
 
+	private BodaciousAdapter<Selectable> bodaciousStringAdapter;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,7 +27,6 @@ public class SelectRecipeActivity extends BaseActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		resume();
 	}
 
 	@Override
@@ -38,17 +39,17 @@ public class SelectRecipeActivity extends BaseActivity {
 
 	@Override
 	protected void setUpList() {
-		BodaciousAdapter<Selectable> bodaciousStringAdapter = new SelectableBodAdapter(
-				radiusItemusPopulus, getLayoutInflater());
+		bodaciousStringAdapter = new SelectableBodAdapter(radiusItemusPopulus,
+				getLayoutInflater());
 
 		List<Selectable> selectables = new ArrayList<Selectable>();
 		for (int i = 0; i < Commons.recipes.size(); i++) {
 			selectables.add(Commons.recipes.get(i));
 		}
+
 		selectables.add(new QuitSelectable(this, "Quit"));
 		bodaciousStringAdapter.setList(selectables, selectables.size() - 1);
 
 		radial.setAdapter(bodaciousStringAdapter);
 	}
-
 }

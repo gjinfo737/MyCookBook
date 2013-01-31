@@ -6,6 +6,7 @@ import java.util.List;
 import com.cukeshow.mycookbook.R.drawable;
 import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
+import com.cukeshow.mycookbook.selectables.Ingregients;
 import com.cukeshow.mycookbook.selectables.Recipe;
 import com.cukeshow.mycookbook.selectables.Selectable;
 import com.cukeshow.mycookbook.selectables.ThingsToDo;
@@ -30,22 +31,21 @@ public class Commons {
 		{
 			add(new ArrayList<Selectable>() {
 				{
+					add(new Ingregients(drawable.ic_launcher, null));
 					add(new ThingsToDo("co", "hs", drawable.ic_launcher, null));
 					add(new ThingsToDo("co", "hs", drawable.ic_launcher, null));
-					add(new ThingsToDo("co", "hs", drawable.ic_launcher, null));
-
 				}
 			});
 			add(new ArrayList<Selectable>() {
 				{
-					add(new ThingsToDo("bs", "Hm", drawable.ic_launcher, null));
+					add(new Ingregients(drawable.ic_launcher, null));
 					add(new ThingsToDo("bs", "Hm", drawable.ic_launcher, null));
 					add(new ThingsToDo("bs", "Hm", drawable.ic_launcher, null));
 				}
 			});
 			add(new ArrayList<Selectable>() {
 				{
-					add(new ThingsToDo("fp", "Hd", drawable.ic_launcher, null));
+					add(new Ingregients(drawable.ic_launcher, null));
 					add(new ThingsToDo("fp", "Hd", drawable.ic_launcher, null));
 					add(new ThingsToDo("fp", "Hd", drawable.ic_launcher, null));
 				}
