@@ -38,15 +38,24 @@ public class Commons {
 		{
 			add(new ArrayList<Ingredient>() {
 				{
-					add(new Ingredient("0", "", drawable.ic_launcher, null));
-					add(new Ingredient("1", "", drawable.ic_launcher, null));
-					add(new Ingredient("2", "", drawable.ic_launcher, null));
-					add(new Ingredient("3", "", drawable.ic_launcher, null));
-					add(new Ingredient("4", "", drawable.ic_launcher, null));
+					// cucumber and onions
+					add(new Ingredient("Cucumbers", "x1", drawable.ic_launcher,
+							null));
+					add(new Ingredient("White Onion", "x1",
+							drawable.ic_launcher, null));
+					add(new Ingredient("Cups of\nwhite vinegar", "x2",
+							drawable.ic_launcher, null));
+					add(new Ingredient("Cups of\nsalt", "x1/2",
+							drawable.ic_launcher, null));
+					add(new Ingredient("Cups of\nwater", "x3",
+							drawable.ic_launcher, null));
+					add(new Ingredient("A Container", "At least 2 quarts",
+							drawable.ic_launcher, null));
 				}
 			});
 			add(new ArrayList<Ingredient>() {
 				{
+					// beef stew
 					add(new Ingredient("0", "", drawable.ic_launcher, null));
 					add(new Ingredient("1", "", drawable.ic_launcher, null));
 					add(new Ingredient("2", "", drawable.ic_launcher, null));
@@ -57,6 +66,7 @@ public class Commons {
 			});
 			add(new ArrayList<Ingredient>() {
 				{
+					// fruit parfait
 					add(new Ingredient("0", "", drawable.ic_launcher, null));
 					add(new Ingredient("1", "", drawable.ic_launcher, null));
 					add(new Ingredient("2", "", drawable.ic_launcher, null));
@@ -69,10 +79,26 @@ public class Commons {
 		{
 			add(new ArrayList<PreparatationStep>() {
 				{
-					add(new PreparatationStep("0a", "", drawable.ic_launcher,
-							null));
-					add(new PreparatationStep("1", "", drawable.ic_launcher,
-							null));
+					// cucumber and onions
+					add(new PreparatationStep(
+							"Cut the onion\ninto 1/4\" cubes", "1",
+							drawable.ic_launcher, null));
+					add(new PreparatationStep("Slice and peel\nthe cucumbers",
+							"2", drawable.ic_launcher, null));
+					add(new PreparatationStep(
+							"Add the cucumbers\nto the container", "3",
+							drawable.ic_launcher, null));
+					add(new PreparatationStep(
+							"Add the onion\nto the container", "4",
+							drawable.ic_launcher, null));
+					add(new PreparatationStep("Add the salt\nto the container",
+							"5", drawable.ic_launcher, null));
+					add(new PreparatationStep(
+							"Add the vinegar\nto the container", "6",
+							drawable.ic_launcher, null));
+					add(new PreparatationStep(
+							"Add the water\nto the container", "7",
+							drawable.ic_launcher, null));
 				}
 			});
 			add(new ArrayList<PreparatationStep>() {
@@ -98,10 +124,14 @@ public class Commons {
 		{
 			add(new ArrayList<CookAndServingStep>() {
 				{
-					add(new CookAndServingStep("0a", "", drawable.ic_launcher,
-							null));
-					add(new CookAndServingStep("1", "", drawable.ic_launcher,
-							null));
+					// cucumber and onions
+					add(new CookAndServingStep("Stir slightly\nthen cover",
+							"1", drawable.ic_launcher, null));
+					add(new CookAndServingStep(
+							"Put it in the\nfridge over night", "2",
+							drawable.ic_launcher, null));
+					add(new CookAndServingStep("Serve plain\nor on a salad",
+							"3", drawable.ic_launcher, null));
 				}
 			});
 			add(new ArrayList<CookAndServingStep>() {
@@ -127,6 +157,7 @@ public class Commons {
 		{
 			add(new ArrayList<ThingsToDo>() {
 				{
+					// cucumber and onions
 					add(new IngredientsList(drawable.ic_launcher, null,
 							ingredients.get(0)));
 					add(new PreparationStepsList(drawable.ic_launcher, null,
@@ -137,6 +168,7 @@ public class Commons {
 			});
 			add(new ArrayList<ThingsToDo>() {
 				{
+					// beef stew
 					add(new IngredientsList(drawable.ic_launcher, null,
 							ingredients.get(1)));
 					add(new PreparationStepsList(drawable.ic_launcher, null,
@@ -147,6 +179,7 @@ public class Commons {
 			});
 			add(new ArrayList<ThingsToDo>() {
 				{
+					// fruit parfait
 					add(new IngredientsList(drawable.ic_launcher, null,
 							ingredients.get(2)));
 					add(new PreparationStepsList(drawable.ic_launcher, null,

@@ -13,7 +13,7 @@ public class CookingAndServingStepsList extends ThingsToDo {
 
 	public CookingAndServingStepsList(int Drawable,
 			OnClickListener clickListener, List<CookAndServingStep> list) {
-		this(Commons.PREPARATION_STEPS, list.size() + "", Drawable,
+		this(Commons.COOKING_AND_SERVING, list.size() + "", Drawable,
 				clickListener);
 		this.setCookAndServingSteps(list);
 	}
