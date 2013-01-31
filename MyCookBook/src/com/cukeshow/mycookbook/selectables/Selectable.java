@@ -9,9 +9,6 @@ public class Selectable {
 	private int Drawable = com.cukeshow.mycookbook.R.drawable.ic_launcher;
 	private OnClickListener MOnClickListener = null;
 
-	public Selectable() {
-	}
-
 	public Selectable(String Title, String SubTitle, int Drawable,
 			OnClickListener clickListener) {
 		this.Title = Title;

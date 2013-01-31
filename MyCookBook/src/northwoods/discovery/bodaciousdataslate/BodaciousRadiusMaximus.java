@@ -24,6 +24,7 @@ public class BodaciousRadiusMaximus<E> {
 			ViewGroup mainLayout, int itemContainerLayoutId,
 			int bodaciousItemId, IRadiusItemusPopulus radiusItemusPopulus,
 			int listViewResourceId) {
+
 		this.layoutsDefault = layoutsDefault;
 		this.layouts = layouts;
 		this.layoutsItemIds = layoutsItemIds;

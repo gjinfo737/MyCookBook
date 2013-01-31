@@ -1,9 +1,10 @@
-package com.cukeshow.mycookbook.selectables;
+package com.cukeshow.mycookbook.selectables.click;
 
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.cukeshow.mycookbook.R.drawable;
+import com.cukeshow.mycookbook.selectables.Selectable;
 
 public class QuitSelectable extends Selectable {
 
@@ -13,8 +14,8 @@ public class QuitSelectable extends Selectable {
 
 	private static IQuitter quitter;
 
-	public QuitSelectable(IQuitter quitter) {
-		super("Quit", "", drawable.ic_launcher, new QuitClickListener());
+	public QuitSelectable(IQuitter quitter, String title) {
+		super(title, "", drawable.ic_launcher, new QuitClickListener());
 		QuitSelectable.quitter = quitter;
 	}
 

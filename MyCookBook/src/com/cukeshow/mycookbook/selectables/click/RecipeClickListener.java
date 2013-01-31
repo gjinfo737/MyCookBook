@@ -1,4 +1,4 @@
-package com.cukeshow.mycookbook.selectables;
+package com.cukeshow.mycookbook.selectables.click;
 
 import android.app.Activity;
 import android.content.Intent;
