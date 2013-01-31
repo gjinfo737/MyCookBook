@@ -1,6 +1,7 @@
 package northwoods.discovery.bodaciousdataslate;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -25,8 +26,14 @@ public class RadiusItemusPopulus_IconTitleSubTitle implements
 	}
 
 	@Override
+	public ViewGroup setViewForRegularData(LayoutInflater inflater,
+			ViewGroup view, Object data) {
+		return setViewForData(inflater, view, data, false, View.VISIBLE);
+	}
+
+	@Override
 	public ViewGroup setViewForData(LayoutInflater inflater, ViewGroup view,
-			Object data) {
+			Object data, boolean isBodacious, int bodaciousVisibility) {
 		if (view != null)
 			view.removeAllViews();
 
@@ -48,4 +55,5 @@ public class RadiusItemusPopulus_IconTitleSubTitle implements
 			view.addView(layout);
 		return layout;
 	}
+
 }

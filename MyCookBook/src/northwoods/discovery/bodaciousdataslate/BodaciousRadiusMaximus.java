@@ -1,6 +1,7 @@
 package northwoods.discovery.bodaciousdataslate;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.RelativeLayout;
@@ -18,13 +19,13 @@ public class BodaciousRadiusMaximus<E> {
 	private int itemContainerLayoutId;
 	private IRadiusItemusPopulus radiusItemusPopulus;
 	private int listViewResourceId;
+	private int bodaciousVisibility;
 
 	public BodaciousRadiusMaximus(int layoutsDefault, int[] layouts,
 			int[] layoutsItemIds, LayoutInflater layoutInflater,
 			ViewGroup mainLayout, int itemContainerLayoutId,
 			int bodaciousItemId, IRadiusItemusPopulus radiusItemusPopulus,
 			int listViewResourceId) {
-
 		this.layoutsDefault = layoutsDefault;
 		this.layouts = layouts;
 		this.layoutsItemIds = layoutsItemIds;
@@ -41,6 +42,7 @@ public class BodaciousRadiusMaximus<E> {
 
 	public void setAdapter(BodaciousAdapter<E> bodaciousStringAdapter) {
 		this.adapter = bodaciousStringAdapter;
+		this.adapter.setBodaciousRadiusMaximus(this);
 		updateView();
 	}
 
@@ -75,12 +77,14 @@ public class BodaciousRadiusMaximus<E> {
 
 				if (viewGroup != null) {
 					ViewGroup item = radiusItemusPopulus.setViewForData(
-							layoutInflater, viewGroup, adapter.getItem(i));
+							layoutInflater, viewGroup, adapter.getItem(i),
+							false, determineBodaciousVisibility());
 				}
 			} else {
 				radiusItemusPopulus.setViewForData(layoutInflater,
 						(ViewGroup) mainLayout.findViewById(bodaciousItemId),
-						adapter.getItem(i));
+						adapter.getItem(i), true,
+						determineBodaciousVisibility());
 			}
 		}
 	}
@@ -104,6 +108,20 @@ public class BodaciousRadiusMaximus<E> {
 		int index = indexWithBod - 1;
 		index = index < 0 ? 0 : index;
 		return index;
+	}
+
+	public Integer determineBodaciousVisibility() {
+		return bodaciousVisibility;
+	}
+
+	public void hideBodacious() {
+		bodaciousVisibility = View.GONE;
+		updateView();
+	}
+
+	public void ShowBodacious() {
+		bodaciousVisibility = View.VISIBLE;
+		updateView();
 	}
 
 }
