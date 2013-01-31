@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.cukeshow.mycookbook.activities.ttdo.CookingAndServingActivity;
 import com.cukeshow.mycookbook.activities.ttdo.IngredientsActivity;
+import com.cukeshow.mycookbook.activities.ttdo.PreparationsActivity;
 
 public class ThingsToDoClickListener implements OnClickListener {
 
@@ -24,11 +26,16 @@ public class ThingsToDoClickListener implements OnClickListener {
 	public void onClick(View v) {
 		Log.e("things to do click", "recipeIndex: " + recipeIndex + " ID: "
 				+ ID);
+		Intent intent = null;
 		if (ID == 0) {
-			Intent intentRecMainScreen = new Intent(activity,
-					IngredientsActivity.class);
-			activity.startActivity(intentRecMainScreen);
+			intent = new Intent(activity, IngredientsActivity.class);
+		} else if (ID == 1) {
+			intent = new Intent(activity, PreparationsActivity.class);
+		} else if (ID == 2) {
+			intent = new Intent(activity, CookingAndServingActivity.class);
 		}
+		if (intent != null)
+			activity.startActivity(intent);
 	}
 
 	public int getRecipeIndex() {

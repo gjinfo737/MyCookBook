@@ -5,17 +5,17 @@ import java.util.List;
 import android.view.View.OnClickListener;
 
 import com.cukeshow.mycookbook.data.Commons;
-import com.cukeshow.mycookbook.selectables.CookAndServeStep;
+import com.cukeshow.mycookbook.selectables.CookAndServingStep;
 import com.cukeshow.mycookbook.selectables.ThingsToDo;
 
 public class CookingAndServingStepsList extends ThingsToDo {
-	private List<CookAndServeStep> cookAndServeSteps;
+	private List<CookAndServingStep> cookAndServeSteps;
 
 	public CookingAndServingStepsList(int Drawable,
-			OnClickListener clickListener, List<CookAndServeStep> list) {
+			OnClickListener clickListener, List<CookAndServingStep> list) {
 		this(Commons.PREPARATION_STEPS, list.size() + "", Drawable,
 				clickListener);
-		this.setIngredients(list);
+		this.setCookAndServingSteps(list);
 	}
 
 	public CookingAndServingStepsList(String Title, String SubTitle,
@@ -23,11 +23,12 @@ public class CookingAndServingStepsList extends ThingsToDo {
 		super(Title, SubTitle, Drawable, clickListener);
 	}
 
-	public List<CookAndServeStep> getIngredients() {
+	public List<CookAndServingStep> getCookAndServingSteps() {
 		return cookAndServeSteps;
 	}
 
-	public void setIngredients(List<CookAndServeStep> ingredients) {
-		cookAndServeSteps = ingredients;
+	public void setCookAndServingSteps(
+			List<CookAndServingStep> cookAndServeSteps) {
+		this.cookAndServeSteps = cookAndServeSteps;
 	}
 }

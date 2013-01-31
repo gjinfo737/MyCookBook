@@ -6,9 +6,9 @@ import java.util.List;
 import com.cukeshow.mycookbook.R.drawable;
 import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
-import com.cukeshow.mycookbook.selectables.CookAndServeStep;
+import com.cukeshow.mycookbook.selectables.CookAndServingStep;
 import com.cukeshow.mycookbook.selectables.Ingredient;
-import com.cukeshow.mycookbook.selectables.PrepartationStep;
+import com.cukeshow.mycookbook.selectables.PreparatationStep;
 import com.cukeshow.mycookbook.selectables.Recipe;
 import com.cukeshow.mycookbook.selectables.ThingsToDo;
 import com.cukeshow.mycookbook.selectables.lists.CookingAndServingStepsList;
@@ -65,58 +65,58 @@ public class Commons {
 
 		}
 	};
-	public static final List<List<PrepartationStep>> prepSteps = new ArrayList<List<PrepartationStep>>() {
+	public static final List<List<PreparatationStep>> prepSteps = new ArrayList<List<PreparatationStep>>() {
 		{
-			add(new ArrayList<PrepartationStep>() {
+			add(new ArrayList<PreparatationStep>() {
 				{
-					add(new PrepartationStep("0a", "", drawable.ic_launcher,
+					add(new PreparatationStep("0a", "", drawable.ic_launcher,
 							null));
-					add(new PrepartationStep("1", "", drawable.ic_launcher,
+					add(new PreparatationStep("1", "", drawable.ic_launcher,
 							null));
 				}
 			});
-			add(new ArrayList<PrepartationStep>() {
+			add(new ArrayList<PreparatationStep>() {
 				{
-					add(new PrepartationStep("0b", "", drawable.ic_launcher,
+					add(new PreparatationStep("0b", "", drawable.ic_launcher,
 							null));
-					add(new PrepartationStep("1", "", drawable.ic_launcher,
+					add(new PreparatationStep("1", "", drawable.ic_launcher,
 							null));
 				}
 			});
-			add(new ArrayList<PrepartationStep>() {
+			add(new ArrayList<PreparatationStep>() {
 				{
-					add(new PrepartationStep("0c", "", drawable.ic_launcher,
+					add(new PreparatationStep("0c", "", drawable.ic_launcher,
 							null));
-					add(new PrepartationStep("1", "", drawable.ic_launcher,
+					add(new PreparatationStep("1", "", drawable.ic_launcher,
 							null));
 				}
 			});
 
 		}
 	};
-	public static final List<List<CookAndServeStep>> cookAndServeSteps = new ArrayList<List<CookAndServeStep>>() {
+	public static final List<List<CookAndServingStep>> cookAndServeSteps = new ArrayList<List<CookAndServingStep>>() {
 		{
-			add(new ArrayList<CookAndServeStep>() {
+			add(new ArrayList<CookAndServingStep>() {
 				{
-					add(new CookAndServeStep("0a", "", drawable.ic_launcher,
+					add(new CookAndServingStep("0a", "", drawable.ic_launcher,
 							null));
-					add(new CookAndServeStep("1", "", drawable.ic_launcher,
+					add(new CookAndServingStep("1", "", drawable.ic_launcher,
 							null));
 				}
 			});
-			add(new ArrayList<CookAndServeStep>() {
+			add(new ArrayList<CookAndServingStep>() {
 				{
-					add(new CookAndServeStep("0b", "", drawable.ic_launcher,
+					add(new CookAndServingStep("0b", "", drawable.ic_launcher,
 							null));
-					add(new CookAndServeStep("1", "", drawable.ic_launcher,
+					add(new CookAndServingStep("1", "", drawable.ic_launcher,
 							null));
 				}
 			});
-			add(new ArrayList<CookAndServeStep>() {
+			add(new ArrayList<CookAndServingStep>() {
 				{
-					add(new CookAndServeStep("0c", "", drawable.ic_launcher,
+					add(new CookAndServingStep("0c", "", drawable.ic_launcher,
 							null));
-					add(new CookAndServeStep("1", "", drawable.ic_launcher,
+					add(new CookAndServingStep("1", "", drawable.ic_launcher,
 							null));
 				}
 			});

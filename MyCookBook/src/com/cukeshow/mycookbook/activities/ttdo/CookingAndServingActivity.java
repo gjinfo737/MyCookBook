@@ -14,12 +14,12 @@ import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
 import com.cukeshow.mycookbook.activities.RecipeMainScreenActivity;
 import com.cukeshow.mycookbook.data.Commons;
-import com.cukeshow.mycookbook.selectables.Ingredient;
+import com.cukeshow.mycookbook.selectables.CookAndServingStep;
 import com.cukeshow.mycookbook.selectables.Recipe;
 import com.cukeshow.mycookbook.selectables.Selectable;
 import com.cukeshow.mycookbook.selectables.ThingsToDo;
 import com.cukeshow.mycookbook.selectables.click.QuitSelectable;
-import com.cukeshow.mycookbook.selectables.lists.IngredientsList;
+import com.cukeshow.mycookbook.selectables.lists.CookingAndServingStepsList;
 
 public class CookingAndServingActivity extends BaseActivity {
 
@@ -55,13 +55,14 @@ public class CookingAndServingActivity extends BaseActivity {
 		Log.e("", "recipe = " + recipe.getTitle());
 
 		List<ThingsToDo> thingsToDo = recipe.getThingsToDo();
-		List<Ingredient> ingredients = ((IngredientsList) thingsToDo
-				.get(ThingsToDo.INGREDIENTS_LIST_INDEX)).getIngredients();
-		int numberOfIngredients = ingredients.size();
+		List<CookAndServingStep> items = ((CookingAndServingStepsList) thingsToDo
+				.get(ThingsToDo.COOK_SERVE_LIST_INDEX))
+				.getCookAndServingSteps();
+		int count = items.size();
 
 		List<Selectable> selectables = new ArrayList<Selectable>();
-		for (int i = 0; i < numberOfIngredients; i++) {
-			selectables.add(ingredients.get(i));
+		for (int i = 0; i < count; i++) {
+			selectables.add(items.get(i));
 		}
 
 		selectables.add(new QuitSelectable(this, "Back"));
