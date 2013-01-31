@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.cukeshow.mycookbook.IngredientsActivity;
+import com.cukeshow.mycookbook.activities.ttdo.IngredientsActivity;
 
 public class ThingsToDoClickListener implements OnClickListener {
 

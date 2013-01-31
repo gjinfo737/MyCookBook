@@ -6,13 +6,19 @@ import java.util.List;
 import com.cukeshow.mycookbook.R.drawable;
 import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
-import com.cukeshow.mycookbook.selectables.CookingAndServingSteps;
-import com.cukeshow.mycookbook.selectables.Ingregients;
-import com.cukeshow.mycookbook.selectables.PreparationSteps;
+import com.cukeshow.mycookbook.selectables.CookAndServeStep;
+import com.cukeshow.mycookbook.selectables.Ingredient;
+import com.cukeshow.mycookbook.selectables.PrepartationStep;
 import com.cukeshow.mycookbook.selectables.Recipe;
 import com.cukeshow.mycookbook.selectables.ThingsToDo;
+import com.cukeshow.mycookbook.selectables.lists.CookingAndServingStepsList;
+import com.cukeshow.mycookbook.selectables.lists.IngredientsList;
+import com.cukeshow.mycookbook.selectables.lists.PreparationStepsList;
 
 public class Commons {
+	public static final String PREPARATION_STEPS = "Preparation Steps";
+	public static final String INGREDIENTS = "Ingredients";
+	public static final String COOKING_AND_SERVING = "Cooking and Serving";
 	public static final int BOD_RADIUS_DEFAULT = layout.bod_radius_default;
 	public static final int BODACIOUS_LISTVIEW_ID = id.bodacious_listView;
 	public static final int RADIUS_ITEM_BODACIOUS = id.bod_radius_item_bodacious;
@@ -28,32 +34,90 @@ public class Commons {
 			id.bod_radius_item_0, id.bod_radius_item_1, id.bod_radius_item_2,
 			id.bod_radius_item_3, id.bod_radius_item_4, id.bod_radius_item_5,
 			id.bod_radius_item_6, id.bod_radius_item_7, id.bod_radius_item_8, };
-	public static final List<List<Ingregients>> ingredients = new ArrayList<List<Ingregients>>() {
+	public static final List<List<Ingredient>> ingredients = new ArrayList<List<Ingredient>>() {
 		{
-			add(new ArrayList<Ingregients>() {
+			add(new ArrayList<Ingredient>() {
 				{
-					add(new Ingregients("0", "", drawable.ic_launcher, null));
-					add(new Ingregients("1", "", drawable.ic_launcher, null));
-					add(new Ingregients("2", "", drawable.ic_launcher, null));
-					add(new Ingregients("3", "", drawable.ic_launcher, null));
-					add(new Ingregients("4", "", drawable.ic_launcher, null));
+					add(new Ingredient("0", "", drawable.ic_launcher, null));
+					add(new Ingredient("1", "", drawable.ic_launcher, null));
+					add(new Ingredient("2", "", drawable.ic_launcher, null));
+					add(new Ingredient("3", "", drawable.ic_launcher, null));
+					add(new Ingredient("4", "", drawable.ic_launcher, null));
 				}
 			});
-			add(new ArrayList<Ingregients>() {
+			add(new ArrayList<Ingredient>() {
 				{
-					add(new Ingregients("0", "", drawable.ic_launcher, null));
-					add(new Ingregients("1", "", drawable.ic_launcher, null));
-					add(new Ingregients("2", "", drawable.ic_launcher, null));
-					add(new Ingregients("3", "", drawable.ic_launcher, null));
-					add(new Ingregients("4", "", drawable.ic_launcher, null));
-					add(new Ingregients("5", "", drawable.ic_launcher, null));
+					add(new Ingredient("0", "", drawable.ic_launcher, null));
+					add(new Ingredient("1", "", drawable.ic_launcher, null));
+					add(new Ingredient("2", "", drawable.ic_launcher, null));
+					add(new Ingredient("3", "", drawable.ic_launcher, null));
+					add(new Ingredient("4", "", drawable.ic_launcher, null));
+					add(new Ingredient("5", "", drawable.ic_launcher, null));
 				}
 			});
-			add(new ArrayList<Ingregients>() {
+			add(new ArrayList<Ingredient>() {
 				{
-					add(new Ingregients("0", "", drawable.ic_launcher, null));
-					add(new Ingregients("1", "", drawable.ic_launcher, null));
-					add(new Ingregients("2", "", drawable.ic_launcher, null));
+					add(new Ingredient("0", "", drawable.ic_launcher, null));
+					add(new Ingredient("1", "", drawable.ic_launcher, null));
+					add(new Ingredient("2", "", drawable.ic_launcher, null));
+				}
+			});
+
+		}
+	};
+	public static final List<List<PrepartationStep>> prepSteps = new ArrayList<List<PrepartationStep>>() {
+		{
+			add(new ArrayList<PrepartationStep>() {
+				{
+					add(new PrepartationStep("0a", "", drawable.ic_launcher,
+							null));
+					add(new PrepartationStep("1", "", drawable.ic_launcher,
+							null));
+				}
+			});
+			add(new ArrayList<PrepartationStep>() {
+				{
+					add(new PrepartationStep("0b", "", drawable.ic_launcher,
+							null));
+					add(new PrepartationStep("1", "", drawable.ic_launcher,
+							null));
+				}
+			});
+			add(new ArrayList<PrepartationStep>() {
+				{
+					add(new PrepartationStep("0c", "", drawable.ic_launcher,
+							null));
+					add(new PrepartationStep("1", "", drawable.ic_launcher,
+							null));
+				}
+			});
+
+		}
+	};
+	public static final List<List<CookAndServeStep>> cookAndServeSteps = new ArrayList<List<CookAndServeStep>>() {
+		{
+			add(new ArrayList<CookAndServeStep>() {
+				{
+					add(new CookAndServeStep("0a", "", drawable.ic_launcher,
+							null));
+					add(new CookAndServeStep("1", "", drawable.ic_launcher,
+							null));
+				}
+			});
+			add(new ArrayList<CookAndServeStep>() {
+				{
+					add(new CookAndServeStep("0b", "", drawable.ic_launcher,
+							null));
+					add(new CookAndServeStep("1", "", drawable.ic_launcher,
+							null));
+				}
+			});
+			add(new ArrayList<CookAndServeStep>() {
+				{
+					add(new CookAndServeStep("0c", "", drawable.ic_launcher,
+							null));
+					add(new CookAndServeStep("1", "", drawable.ic_launcher,
+							null));
 				}
 			});
 
@@ -63,26 +127,32 @@ public class Commons {
 		{
 			add(new ArrayList<ThingsToDo>() {
 				{
-					add(new Ingregients(drawable.ic_launcher, null,
+					add(new IngredientsList(drawable.ic_launcher, null,
 							ingredients.get(0)));
-					add(new PreparationSteps(drawable.ic_launcher, null));
-					add(new CookingAndServingSteps(drawable.ic_launcher, null));
+					add(new PreparationStepsList(drawable.ic_launcher, null,
+							prepSteps.get(0)));
+					add(new CookingAndServingStepsList(drawable.ic_launcher,
+							null, cookAndServeSteps.get(0)));
 				}
 			});
 			add(new ArrayList<ThingsToDo>() {
 				{
-					add(new Ingregients(drawable.ic_launcher, null,
+					add(new IngredientsList(drawable.ic_launcher, null,
 							ingredients.get(1)));
-					add(new PreparationSteps(drawable.ic_launcher, null));
-					add(new CookingAndServingSteps(drawable.ic_launcher, null));
+					add(new PreparationStepsList(drawable.ic_launcher, null,
+							prepSteps.get(1)));
+					add(new CookingAndServingStepsList(drawable.ic_launcher,
+							null, cookAndServeSteps.get(1)));
 				}
 			});
 			add(new ArrayList<ThingsToDo>() {
 				{
-					add(new Ingregients(drawable.ic_launcher, null,
+					add(new IngredientsList(drawable.ic_launcher, null,
 							ingredients.get(2)));
-					add(new PreparationSteps(drawable.ic_launcher, null));
-					add(new CookingAndServingSteps(drawable.ic_launcher, null));
+					add(new PreparationStepsList(drawable.ic_launcher, null,
+							prepSteps.get(2)));
+					add(new CookingAndServingStepsList(drawable.ic_launcher,
+							null, cookAndServeSteps.get(2)));
 				}
 			});
 

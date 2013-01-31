@@ -1,4 +1,4 @@
-package com.cukeshow.mycookbook;
+package com.cukeshow.mycookbook.activities.ttdo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,14 +7,19 @@ import northwoods.discovery.bodaciousdataslate.BodaciousAdapter;
 import northwoods.discovery.bodaciousdataslate.SelectableBodAdapter;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
+import com.cukeshow.mycookbook.BaseActivity;
+import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
+import com.cukeshow.mycookbook.activities.RecipeMainScreenActivity;
 import com.cukeshow.mycookbook.data.Commons;
-import com.cukeshow.mycookbook.selectables.Ingregients;
+import com.cukeshow.mycookbook.selectables.Ingredient;
 import com.cukeshow.mycookbook.selectables.Recipe;
 import com.cukeshow.mycookbook.selectables.Selectable;
 import com.cukeshow.mycookbook.selectables.ThingsToDo;
 import com.cukeshow.mycookbook.selectables.click.QuitSelectable;
+import com.cukeshow.mycookbook.selectables.lists.IngredientsList;
 
 public class IngredientsActivity extends BaseActivity {
 
@@ -23,8 +28,13 @@ public class IngredientsActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(layout.select_recipe_activity_start);
+		setContentView(layout.main_screen_activity);
 		create();
+		((TextView) findViewById(id.textView_activity_title))
+				.setText(Commons.recipes.get(
+						RecipeMainScreenActivity.getCurrentRecipeIndex())
+						.getTitle()
+						+ " - " + Commons.INGREDIENTS);
 	}
 
 	@Override
@@ -34,10 +44,6 @@ public class IngredientsActivity extends BaseActivity {
 
 	@Override
 	protected void loadList() {
-		// for (int i = 0; i < Commons.recipes.size(); i++) {
-		// Commons.recipes.get(i).setMOnClickListener(
-		// new RecipeClickListener(this, i));
-		// }
 	}
 
 	@Override
@@ -49,7 +55,7 @@ public class IngredientsActivity extends BaseActivity {
 		Log.e("", "recipe = " + recipe.getTitle());
 
 		List<ThingsToDo> thingsToDo = recipe.getThingsToDo();
-		List<Ingregients> ingredients = ((Ingregients) thingsToDo
+		List<Ingredient> ingredients = ((IngredientsList) thingsToDo
 				.get(ThingsToDo.INGREDIENTS_LIST_INDEX)).getIngredients();
 		int numberOfIngredients = ingredients.size();
 
@@ -58,7 +64,7 @@ public class IngredientsActivity extends BaseActivity {
 			selectables.add(ingredients.get(i));
 		}
 
-		selectables.add(new QuitSelectable(this, "Back To Recipe"));
+		selectables.add(new QuitSelectable(this, "Back"));
 		bodaciousStringAdapter.setList(selectables, selectables.size() - 1);
 
 		radial.setAdapter(bodaciousStringAdapter);

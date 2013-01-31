@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.cukeshow.mycookbook.RecipeMainScreenActivity;
+import com.cukeshow.mycookbook.activities.RecipeMainScreenActivity;
 
 public class RecipeClickListener implements OnClickListener {
 	private int ID = -1;

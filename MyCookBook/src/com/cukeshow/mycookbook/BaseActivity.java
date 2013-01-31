@@ -8,6 +8,8 @@ import northwoods.discovery.bodaciousdataslate.RadiusItemusPopulus_IconTitleSubT
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
@@ -22,6 +24,9 @@ public class BaseActivity extends Activity implements IQuitter {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	}
 
 	protected void create() {

@@ -68,7 +68,8 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="173dp" >
             </northwoods.discovery.bodaciousdataslate.BodaciousItem>
-            <northwoods.discovery.bodaciousdataslate.BodaciousItem
+
+            <northwoods.discovery.bodaciousdataslate.BodaciousItem
                 android:id="@+id/bod_radius_item_6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,7 +84,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true" >
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="35dp"
+            android:layout_marginRight="25dp" >
         </northwoods.discovery.bodaciousdataslate.BodaciousItem>
     </RelativeLayout>
 
