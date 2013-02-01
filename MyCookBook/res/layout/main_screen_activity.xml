@@ -12,6 +12,16 @@
         tools:context=".MainActivity" >
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/imageView_main_layout_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="23dp"
+        android:layout_marginLeft="38dp"
+        android:src="@drawable/cookokay" />
+
     <TextView
         android:id="@+id/textView_activity_title"
         android:layout_width="wrap_content"

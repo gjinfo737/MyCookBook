@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.cukeshow.mycookbook.BaseActivity;
+import com.cukeshow.mycookbook.R.drawable;
 import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
 import com.cukeshow.mycookbook.data.Commons;
@@ -24,9 +25,10 @@ public class RecipeMainScreenActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(layout.main_screen_activity);
-		create();
+		create(drawable.recipe);
 		((TextView) findViewById(id.textView_activity_title))
 				.setText(Commons.recipes.get(recipeIndex).getTitle());
+
 	}
 
 	@Override

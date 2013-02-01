@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.cukeshow.mycookbook.R.id;
 import com.cukeshow.mycookbook.R.layout;
@@ -29,7 +30,7 @@ public class BaseActivity extends Activity implements IQuitter {
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	}
 
-	protected void create() {
+	protected void create(int icon) {
 		this.radiusItemusPopulus = new RadiusItemusPopulus_IconTitleSubTitle(
 				layout.item_layout, id.item_imageView, id.item_textView_title,
 				id.item_textView_subTitle);
@@ -42,6 +43,8 @@ public class BaseActivity extends Activity implements IQuitter {
 				Commons.BODACIOUS_LISTVIEW_ID);
 		loadList();
 		setUpList();
+		((ImageView) findViewById(id.imageView_main_layout_icon))
+				.setImageResource(icon);
 	}
 
 	protected void clearAll() {

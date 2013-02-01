@@ -19,7 +19,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/item_imageView"
         android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+      	android:textSize="25dp"
         android:textColor="#000" />
 
     <TextView
@@ -29,7 +29,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/item_textView_title"
         android:text="Small Text"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+		android:textSize="18dp"
         android:textColor="#000" />
 
 </RelativeLayout>

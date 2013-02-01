@@ -39,18 +39,18 @@ public class Commons {
 			add(new ArrayList<Ingredient>() {
 				{
 					// cucumber and onions
-					add(new Ingredient("Cucumbers", "x1", drawable.ic_launcher,
-							null));
+					add(new Ingredient("Cucumbers", "x1",
+							drawable.cucumberwhole, null));
 					add(new Ingredient("White Onion", "x1",
-							drawable.ic_launcher, null));
+							drawable.whiteonionwhole, null));
 					add(new Ingredient("Cups of\nwhite vinegar", "x2",
-							drawable.ic_launcher, null));
+							drawable.whitevinegarbottle, null));
 					add(new Ingredient("Cups of\nsalt", "x1/2",
-							drawable.ic_launcher, null));
+							drawable.saltinbowl, null));
 					add(new Ingredient("Cups of\nwater", "x3",
-							drawable.ic_launcher, null));
+							drawable.waterpouring, null));
 					add(new Ingredient("A Container", "At least 2 quarts",
-							drawable.ic_launcher, null));
+							drawable.twoqrtcontainer, null));
 				}
 			});
 			add(new ArrayList<Ingredient>() {
@@ -82,9 +82,9 @@ public class Commons {
 					// cucumber and onions
 					add(new PreparatationStep(
 							"Cut the onion\ninto 1/4\" cubes", "1",
-							drawable.ic_launcher, null));
+							drawable.whiteonionsdiced, null));
 					add(new PreparatationStep("Slice and peel\nthe cucumbers",
-							"2", drawable.ic_launcher, null));
+							"2", drawable.peeledcucumberslicesbowl, null));
 					add(new PreparatationStep(
 							"Add the cucumbers\nto the container", "3",
 							drawable.ic_launcher, null));
@@ -125,13 +125,15 @@ public class Commons {
 			add(new ArrayList<CookAndServingStep>() {
 				{
 					// cucumber and onions
-					add(new CookAndServingStep("Stir slightly\nthen cover",
-							"1", drawable.ic_launcher, null));
-					add(new CookAndServingStep(
-							"Put it in the\nfridge over night", "2",
+					add(new CookAndServingStep("1",
+							"Stir slightly\nthen cover", drawable.ic_launcher,
+							null));
+					add(new CookAndServingStep("2",
+							"Put it in the\nfridge over night",
 							drawable.ic_launcher, null));
-					add(new CookAndServingStep("Serve plain\nor on a salad",
-							"3", drawable.ic_launcher, null));
+					add(new CookAndServingStep("2",
+							"Serve plain\nor on a salad", drawable.ic_launcher,
+							null));
 				}
 			});
 			add(new ArrayList<CookAndServingStep>() {
